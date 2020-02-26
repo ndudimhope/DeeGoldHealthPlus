@@ -1,0 +1,46 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+    <UserSecretsId>d0abbe45-388d-4a8a-8843-68ef97a4cee1</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20200125112154_seededdatabasewithimages.cs" />
+    <Compile Remove="Migrations\20200125112154_seededdatabasewithimages.Designer.cs" />
+    <Compile Remove="Migrations\20200212150943_newproductadded.cs" />
+    <Compile Remove="Migrations\20200212150943_newproductadded.Designer.cs" />
+    <Compile Remove="Migrations\20200212173846_viewimproved.cs" />
+    <Compile Remove="Migrations\20200212173846_viewimproved.Designer.cs" />
+    <Compile Remove="Migrations\20200213052916_OrderAndCartFunctionalityAdded.cs" />
+    <Compile Remove="Migrations\20200213052916_OrderAndCartFunctionalityAdded.Designer.cs" />
+    <Compile Remove="Migrations\20200213071833_OrderAndCartFunctionalityAdded.cs" />
+    <Compile Remove="Migrations\20200213071833_OrderAndCartFunctionalityAdded.Designer.cs" />
+    <Compile Remove="Migrations\20200217050839_SeededDataAdded.cs" />
+    <Compile Remove="Migrations\20200217050839_SeededDataAdded.Designer.cs" />
+    <Compile Remove="Migrations\20200217051037_AddShoppingCartItem.cs" />
+    <Compile Remove="Migrations\20200217051037_AddShoppingCartItem.Designer.cs" />
+    <Compile Remove="Migrations\20200217051129_OrdersAdded.cs" />
+    <Compile Remove="Migrations\20200217051129_OrdersAdded.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Azure.Storage.Blobs" Version="12.0.0" />
+    <PackageReference Include="Azure.Storage.Files.Shares" Version="12.0.0-preview.5" />
+    <PackageReference Include="Azure.Storage.Queues" Version="12.0.0" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.Azure" Version="1.0.0" />
+    <PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="3.0.0" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="3.0.0" />
+    <PackageReference Include="WindowsAzure.Storage" Version="9.3.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services" />
+  </ItemGroup>
+
+</Project>

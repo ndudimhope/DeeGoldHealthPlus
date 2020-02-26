@@ -1,0 +1,34 @@
+{
+  "version": "1.0",
+  "defaultProvider": "cdnjs",
+  "libraries": [
+    {
+      "library": "twitter-bootstrap@3.3.7",
+      "destination": "wwwroot/lib/twitter-bootstrap/"
+    },
+    {
+      "library": "jquery@3.4.1",
+      "destination": "wwwroot/lib/jquery/"
+    },
+    {
+      "library": "responsiveCarousel@1.2.2",
+      "destination": "wwwroot/lib/responsiveCarousel/"
+    },
+    {
+      "library": "shopify-cartjs@0.4.3",
+      "destination": "wwwroot/lib/shopify-cartjs/"
+    },
+    {
+      "library": "responsive@1.0.5",
+      "destination": "wwwroot/lib/responsive/"
+    },
+    {
+      "library": "OwlCarousel2@2.3.4",
+      "destination": "wwwroot/lib/OwlCarousel2/"
+    },
+    {
+      "library": "webkit.js@0.1.0",
+      "destination": "wwwroot/lib/webkit.js/"
+    }
+  ]
+}

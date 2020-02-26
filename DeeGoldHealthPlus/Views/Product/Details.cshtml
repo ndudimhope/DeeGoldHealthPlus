@@ -1,0 +1,16 @@
+﻿
+@model Product
+
+<h2>@Model.ProductName</h2>
+
+<div class="thumbnail">
+    <img alt="@Model.ProductName" src="@Model.ImageThumbnailUrl">
+    <div class="caption-full">
+        <h3 class="pull-right">@Model.Price</h3>
+        <h3>
+            <a href="#">@Model.ProductName</a>
+        </h3>
+        <h4>@Model.ShortDescription</h4>
+        <p>@Model.LongDescription</p>
+    </div>
+</div>
