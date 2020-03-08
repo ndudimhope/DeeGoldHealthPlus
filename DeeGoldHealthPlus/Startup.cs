@@ -30,9 +30,8 @@ namespace DeeGoldHealthPlus
             services.AddDbContext<AppDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            
-            services.AddControllersWithViews();//services.AddMvc(); would also work still
-            services.AddRazorPages();
+            services.AddDefaultIdentity<IdentityUser>().AddEntityFrameworkStores<AppDbContext>();
+
 
             
 
@@ -44,6 +43,11 @@ namespace DeeGoldHealthPlus
 
             services.AddHttpContextAccessor();
             services.AddSession();
+
+            services.AddControllersWithViews();//services.AddMvc(); would also work still
+            services.AddRazorPages();
+
+
 
 
             services.AddAzureClients(builder =>

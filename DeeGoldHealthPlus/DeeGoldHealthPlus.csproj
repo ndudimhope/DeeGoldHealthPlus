@@ -6,6 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Migrations\20200125103626_InitialMigration.cs" />
+    <Compile Remove="Migrations\20200125103626_InitialMigration.Designer.cs" />
     <Compile Remove="Migrations\20200125112154_seededdatabasewithimages.cs" />
     <Compile Remove="Migrations\20200125112154_seededdatabasewithimages.Designer.cs" />
     <Compile Remove="Migrations\20200212150943_newproductadded.cs" />
@@ -22,12 +24,23 @@
     <Compile Remove="Migrations\20200217051037_AddShoppingCartItem.Designer.cs" />
     <Compile Remove="Migrations\20200217051129_OrdersAdded.cs" />
     <Compile Remove="Migrations\20200217051129_OrdersAdded.Designer.cs" />
+    <Compile Remove="Migrations\20200217054804_AddShoppingCartItem.cs" />
+    <Compile Remove="Migrations\20200217054804_AddShoppingCartItem.Designer.cs" />
+    <Compile Remove="Migrations\20200225175841_OrderDetailAdded.cs" />
+    <Compile Remove="Migrations\20200225175841_OrderDetailAdded.Designer.cs" />
+    <Compile Remove="Migrations\20200225180204_OrderDetailupdated.cs" />
+    <Compile Remove="Migrations\20200225180204_OrderDetailupdated.Designer.cs" />
   </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Azure.Storage.Blobs" Version="12.0.0" />
     <PackageReference Include="Azure.Storage.Files.Shares" Version="12.0.0-preview.5" />
     <PackageReference Include="Azure.Storage.Queues" Version="12.0.0" />
+    <PackageReference Include="Castle.Core" Version="4.4.0" />
+    <PackageReference Include="Microsoft.AspNet.Identity.Owin" Version="2.2.3" />
+    <PackageReference Include="Microsoft.AspNet.WebHelpers" Version="3.2.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.UI" Version="3.0.0" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.1" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.1">
       <PrivateAssets>all</PrivateAssets>

@@ -1,4 +1,6 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -6,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace DeeGoldHealthPlus.models
 {
-    public class AppDbContext: DbContext
+    public class AppDbContext : IdentityDbContext<IdentityUser>
     {
         public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
         {
@@ -17,6 +19,10 @@ namespace DeeGoldHealthPlus.models
         public DbSet<ShoppingCartItem> ShoppingCartItems { get; set; }
 
         public DbSet<Order> Orders { get; set; }
+
+        public DbSet<OrderDetail> OrderDetails{get; set;}
+
+      
 
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -42,7 +48,7 @@ namespace DeeGoldHealthPlus.models
                 ImageUrl = "https://ndudimhope.blob.core.windows.net/deegoldhealth/BERRYOIL.jpg",
               
                 IsProductOfTheWeek = true,
-                ImageThumbnailUrl= "https://ndudimhope.blob.core.windows.net/deegoldhealth/BERRYOIL_opt.jpg",
+                ImageThumbnailUrl= "https://ndudimhope.blob.core.windows.net/deegoldhealth/berryoil%20small.jpg",
                 
                 
             });
@@ -58,7 +64,7 @@ namespace DeeGoldHealthPlus.models
                 CategoryId = 2,
                 ImageUrl = "https://ndudimhope.blob.core.windows.net/deegoldhealth/Longrich-Nigeria-Products-Green-Tea-1.jpg",
                 IsProductOfTheWeek = false,
-                ImageThumbnailUrl = "https://ndudimhope.blob.core.windows.net/deegoldhealth/Longrich-Nigeria-Products-Green-Tea-1_opt.jpg",
+                ImageThumbnailUrl = "https://ndudimhope.blob.core.windows.net/deegoldhealth/greentea%20small.jpg",
 
 
             });
@@ -74,7 +80,7 @@ namespace DeeGoldHealthPlus.models
                 CategoryId = 2,
                 ImageUrl = "https://ndudimhope.blob.core.windows.net/deegoldhealth/Longrich-Nigeria-Products-Slimming-Tea.jpg",
                 IsProductOfTheWeek = false,
-                ImageThumbnailUrl = "https://ndudimhope.blob.core.windows.net/deegoldhealth/Longrich-Nigeria-Products-Slimming-Tea_opt.jpg",
+                ImageThumbnailUrl = "https://ndudimhope.blob.core.windows.net/deegoldhealth/slimming%20tea.jpg",
 
 
             });
@@ -90,7 +96,7 @@ namespace DeeGoldHealthPlus.models
                 CategoryId = 2,
                 ImageUrl = "https://ndudimhope.blob.core.windows.net/deegoldhealth/Longrich-Nigeria-Products-Vintage-Wine.jpg",
                 IsProductOfTheWeek = true,
-                ImageThumbnailUrl = "https://ndudimhope.blob.core.windows.net/deegoldhealth/Longrich-Nigeria-Products-Vintage-Wine_opt.jpg",
+                ImageThumbnailUrl = "https://ndudimhope.blob.core.windows.net/deegoldhealth/vintage%20wine%20small.jpg",
 
 
             });
@@ -106,14 +112,14 @@ namespace DeeGoldHealthPlus.models
                 CategoryId = 2,
                 ImageUrl = "https://ndudimhope.blob.core.windows.net/deegoldhealth/mengquian.jpg",
                 IsProductOfTheWeek = false,
-                ImageThumbnailUrl = "https://ndudimhope.blob.core.windows.net/deegoldhealth/mengquian_opt.jpg",
+                ImageThumbnailUrl = "https://ndudimhope.blob.core.windows.net/deegoldhealth/mengquian%20small.jpg",
 
             });
 
             modelBuilder.Entity<Product>().HasData(new Product
             {
                 ProductId = 6,
-                ProductName = "GI-VITAL ULCER CAPSULES",
+                ProductName = "Gi-Vital Ulcer Capsules",
                 Price = 9000.00M,
                 ShortDescription = "For the complete treatment of ulcer",
                 LongDescription =
@@ -121,7 +127,7 @@ namespace DeeGoldHealthPlus.models
                 CategoryId = 3,
                 ImageUrl = "https://ndudimhope.blob.core.windows.net/deegoldhealth/ulcer%20capsules.jpg",
                 IsProductOfTheWeek = true,
-                ImageThumbnailUrl = "https://ndudimhope.blob.core.windows.net/deegoldhealth/ulcer%20capsules_opt.jpg",
+                ImageThumbnailUrl = "https://ndudimhope.blob.core.windows.net/deegoldhealth/ulcer%20capsules%20small.jpg",
 
             });
 
@@ -137,7 +143,7 @@ namespace DeeGoldHealthPlus.models
                 ImageUrl = "https://ndudimhope.blob.core.windows.net/deegoldhealth/Longrich-products-Mouth-Freshener.jpg",
               
                 IsProductOfTheWeek = false,
-                ImageThumbnailUrl = "https://ndudimhope.blob.core.windows.net/deegoldhealth/Longrich-products-Mouth-Freshener_opt.jpg",
+                ImageThumbnailUrl = "https://ndudimhope.blob.core.windows.net/deegoldhealth/mouth%20freshner%20small.jpg",
 
             });
 

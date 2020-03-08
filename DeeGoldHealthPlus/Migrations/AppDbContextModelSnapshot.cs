@@ -15,7 +15,7 @@ namespace DeeGoldHealthPlus.Migrations
         {
 #pragma warning disable 612, 618
             modelBuilder
-                .HasAnnotation("ProductVersion", "3.1.1")
+                .HasAnnotation("ProductVersion", "3.1.2")
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
@@ -136,7 +136,7 @@ namespace DeeGoldHealthPlus.Migrations
 
                     b.HasIndex("ProductId");
 
-                    b.ToTable("OrderDetail");
+                    b.ToTable("OrderDetails");
                 });
 
             modelBuilder.Entity("DeeGoldHealthPlus.models.Product", b =>
@@ -181,7 +181,7 @@ namespace DeeGoldHealthPlus.Migrations
                         {
                             ProductId = 1,
                             CategoryId = 2,
-                            ImageThumbnailUrl = "https://ndudimhope.blob.core.windows.net/deegoldhealth/BERRYOIL_opt.jpg",
+                            ImageThumbnailUrl = "https://ndudimhope.blob.core.windows.net/deegoldhealth/berryoil%20small.jpg",
                             ImageUrl = "https://ndudimhope.blob.core.windows.net/deegoldhealth/BERRYOIL.jpg",
                             IsProductOfTheWeek = true,
                             LongDescription = "Rich in Omega 3,6,7 & 9 Protects the liver, heart and kidney",
@@ -193,7 +193,7 @@ namespace DeeGoldHealthPlus.Migrations
                         {
                             ProductId = 2,
                             CategoryId = 2,
-                            ImageThumbnailUrl = "https://ndudimhope.blob.core.windows.net/deegoldhealth/Longrich-Nigeria-Products-Green-Tea-1_opt.jpg",
+                            ImageThumbnailUrl = "https://ndudimhope.blob.core.windows.net/deegoldhealth/greentea%20small.jpg",
                             ImageUrl = "https://ndudimhope.blob.core.windows.net/deegoldhealth/Longrich-Nigeria-Products-Green-Tea-1.jpg",
                             IsProductOfTheWeek = false,
                             LongDescription = "It is a very good dietary option containing detoxifier and anti-carcinogens",
@@ -205,7 +205,7 @@ namespace DeeGoldHealthPlus.Migrations
                         {
                             ProductId = 3,
                             CategoryId = 2,
-                            ImageThumbnailUrl = "https://ndudimhope.blob.core.windows.net/deegoldhealth/Longrich-Nigeria-Products-Slimming-Tea_opt.jpg",
+                            ImageThumbnailUrl = "https://ndudimhope.blob.core.windows.net/deegoldhealth/slimming%20tea.jpg",
                             ImageUrl = "https://ndudimhope.blob.core.windows.net/deegoldhealth/Longrich-Nigeria-Products-Slimming-Tea.jpg",
                             IsProductOfTheWeek = false,
                             LongDescription = "Increases fat burning and improves physical performance",
@@ -217,7 +217,7 @@ namespace DeeGoldHealthPlus.Migrations
                         {
                             ProductId = 4,
                             CategoryId = 2,
-                            ImageThumbnailUrl = "https://ndudimhope.blob.core.windows.net/deegoldhealth/Longrich-Nigeria-Products-Vintage-Wine_opt.jpg",
+                            ImageThumbnailUrl = "https://ndudimhope.blob.core.windows.net/deegoldhealth/vintage%20wine%20small.jpg",
                             ImageUrl = "https://ndudimhope.blob.core.windows.net/deegoldhealth/Longrich-Nigeria-Products-Vintage-Wine.jpg",
                             IsProductOfTheWeek = true,
                             LongDescription = "Increases fat burning and improves physical performance",
@@ -229,7 +229,7 @@ namespace DeeGoldHealthPlus.Migrations
                         {
                             ProductId = 5,
                             CategoryId = 2,
-                            ImageThumbnailUrl = "https://ndudimhope.blob.core.windows.net/deegoldhealth/mengquian_opt.jpg",
+                            ImageThumbnailUrl = "https://ndudimhope.blob.core.windows.net/deegoldhealth/mengquian%20small.jpg",
                             ImageUrl = "https://ndudimhope.blob.core.windows.net/deegoldhealth/mengquian.jpg",
                             IsProductOfTheWeek = false,
                             LongDescription = "It corrects hormonal imbalance, it is anti-aging",
@@ -241,19 +241,19 @@ namespace DeeGoldHealthPlus.Migrations
                         {
                             ProductId = 6,
                             CategoryId = 3,
-                            ImageThumbnailUrl = "https://ndudimhope.blob.core.windows.net/deegoldhealth/ulcer%20capsules_opt.jpg",
+                            ImageThumbnailUrl = "https://ndudimhope.blob.core.windows.net/deegoldhealth/ulcer%20capsules%20small.jpg",
                             ImageUrl = "https://ndudimhope.blob.core.windows.net/deegoldhealth/ulcer%20capsules.jpg",
                             IsProductOfTheWeek = true,
                             LongDescription = "Effective in the treatment of ulcer, both early and acute",
                             Price = 9000.00m,
-                            ProductName = "GI-VITAL ULCER CAPSULES",
+                            ProductName = "Gi-Vital Ulcer Capsules",
                             ShortDescription = "For the complete treatment of ulcer"
                         },
                         new
                         {
                             ProductId = 7,
                             CategoryId = 1,
-                            ImageThumbnailUrl = "https://ndudimhope.blob.core.windows.net/deegoldhealth/Longrich-products-Mouth-Freshener_opt.jpg",
+                            ImageThumbnailUrl = "https://ndudimhope.blob.core.windows.net/deegoldhealth/mouth%20freshner%20small.jpg",
                             ImageUrl = "https://ndudimhope.blob.core.windows.net/deegoldhealth/Longrich-products-Mouth-Freshener.jpg",
                             IsProductOfTheWeek = false,
                             LongDescription = "A mouth spuray to keep your breath fresh, and your healthy",
@@ -298,6 +298,206 @@ namespace DeeGoldHealthPlus.Migrations
                     b.ToTable("ShoppingCartItems");
                 });
 
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(256)")
+                        .HasMaxLength(256);
+
+                    b.Property<string>("NormalizedName")
+                        .HasColumnType("nvarchar(256)")
+                        .HasMaxLength(256);
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedName")
+                        .IsUnique()
+                        .HasName("RoleNameIndex")
+                        .HasFilter("[NormalizedName] IS NOT NULL");
+
+                    b.ToTable("AspNetRoles");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("RoleId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetRoleClaims");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUser", b =>
+                {
+                    b.Property<string>("Id")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<int>("AccessFailedCount")
+                        .HasColumnType("int");
+
+                    b.Property<string>("ConcurrencyStamp")
+                        .IsConcurrencyToken()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Email")
+                        .HasColumnType("nvarchar(256)")
+                        .HasMaxLength(256);
+
+                    b.Property<bool>("EmailConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<bool>("LockoutEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<DateTimeOffset?>("LockoutEnd")
+                        .HasColumnType("datetimeoffset");
+
+                    b.Property<string>("NormalizedEmail")
+                        .HasColumnType("nvarchar(256)")
+                        .HasMaxLength(256);
+
+                    b.Property<string>("NormalizedUserName")
+                        .HasColumnType("nvarchar(256)")
+                        .HasMaxLength(256);
+
+                    b.Property<string>("PasswordHash")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("PhoneNumber")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("PhoneNumberConfirmed")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("SecurityStamp")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool>("TwoFactorEnabled")
+                        .HasColumnType("bit");
+
+                    b.Property<string>("UserName")
+                        .HasColumnType("nvarchar(256)")
+                        .HasMaxLength(256);
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("NormalizedEmail")
+                        .HasName("EmailIndex");
+
+                    b.HasIndex("NormalizedUserName")
+                        .IsUnique()
+                        .HasName("UserNameIndex")
+                        .HasFilter("[NormalizedUserName] IS NOT NULL");
+
+                    b.ToTable("AspNetUsers");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("ClaimType")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("ClaimValue")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserClaims");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+                {
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(128)")
+                        .HasMaxLength(128);
+
+                    b.Property<string>("ProviderKey")
+                        .HasColumnType("nvarchar(128)")
+                        .HasMaxLength(128);
+
+                    b.Property<string>("ProviderDisplayName")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("UserId")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("LoginProvider", "ProviderKey");
+
+                    b.HasIndex("UserId");
+
+                    b.ToTable("AspNetUserLogins");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("RoleId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.HasKey("UserId", "RoleId");
+
+                    b.HasIndex("RoleId");
+
+                    b.ToTable("AspNetUserRoles");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+                {
+                    b.Property<string>("UserId")
+                        .HasColumnType("nvarchar(450)");
+
+                    b.Property<string>("LoginProvider")
+                        .HasColumnType("nvarchar(128)")
+                        .HasMaxLength(128);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(128)")
+                        .HasMaxLength(128);
+
+                    b.Property<string>("Value")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("UserId", "LoginProvider", "Name");
+
+                    b.ToTable("AspNetUserTokens");
+                });
+
             modelBuilder.Entity("DeeGoldHealthPlus.models.OrderDetail", b =>
                 {
                     b.HasOne("DeeGoldHealthPlus.models.Order", "Order")
@@ -327,6 +527,57 @@ namespace DeeGoldHealthPlus.Migrations
                     b.HasOne("DeeGoldHealthPlus.models.Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId");
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserRole<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityRole", null)
+                        .WithMany()
+                        .HasForeignKey("RoleId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
+                {
+                    b.HasOne("Microsoft.AspNetCore.Identity.IdentityUser", null)
+                        .WithMany()
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

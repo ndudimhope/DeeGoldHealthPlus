@@ -6,8 +6,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Identity;
 
 
-[assembly: HostingStartup(typeof(DeeGoldHealthPlus.Areas.Identity.IdentityHostingStartup))]
-namespace DeeGoldHealthPlus.Areas.Identity
+[assembly: HostingStartup(typeof(DeeGoldHealthPlus.Area.Identity.IdentityHostingStartup))]
+namespace DeeGoldHealthPlus.Area.Identity
 {
     public class IdentityHostingStartup : IHostingStartup
     {
